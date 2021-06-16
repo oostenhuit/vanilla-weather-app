@@ -24,27 +24,36 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <h1>New York</h1>
-        <ul>
-          <li>Wednesday 08:57</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="clear"
-            />18 °C | °F
-          </div>
-          <div class="col-6">
-            <ul class="climate">
-              <li>Precipitation: 74%</li>
-              <li>Wind: 1 km/h</li>
-              <li>Humidity: 10%</li>
-              <li>Feels like: 14°C</li>
-            </ul>
+        <div class="weather-app">
+          <h1>New York</h1>
+          <ul>
+            <li>Wednesday 08:57</li>
+            <li>Clear</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <span class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="clear"
+                  class="float-left"
+                />
+                <span class="float-left"
+                  ><strong>18</strong><span class="units">°C | °F</span></span
+                >
+              </span>
+            </div>
+            <div class="col-6">
+              <ul class="climate">
+                <li>Precipitation: 74%</li>
+                <li>Wind: 1 km/h</li>
+                <li>Humidity: 10%</li>
+                <li>Feels like: 14°C</li>
+              </ul>
+            </div>
           </div>
         </div>
+
         <small>
           <a
             href="https://github.com/oostenhuit/vanilla-weather-app"

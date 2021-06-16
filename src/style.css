@@ -21,11 +21,27 @@ a {
 .wrapper {
   max-width: 600px;
   margin: 30px auto;
+}
+.weather-app {
   border: 1px solid #bac8dd;
   padding: 16px;
   border-radius: 5px;
   box-shadow: 5px 10px 10px rgba(186, 200, 221, 0.75);
   background-color: #e5effd;
+}
+.weather-temperature img {
+  margin-right: 10px;
+  position: relative;
+  top: -20px;
+}
+.weather-temperature strong {
+  font-size: 64px;
+  font-weight: 500;
+  color: #080808;
+}
+.weather-temperature .units {
+  position: relative;
+  top: -33px;
 }
 .climate {
   font-size: 13px;
