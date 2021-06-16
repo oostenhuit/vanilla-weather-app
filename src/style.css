@@ -1,3 +1,32 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #d4e2f7;
+}
 h1 {
-  color: blue;
+  font-size: 24px;
+  color: #080808;
+  margin-bottom: 0;
+}
+ul {
+  padding: 0px;
+}
+li {
+  list-style: none;
+  color: #080808;
+}
+a {
+  color: #6f89ce;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  border: 1px solid #bac8dd;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px rgba(186, 200, 221, 0.75);
+  background-color: #e5effd;
+}
+.climate {
+  font-size: 13px;
 }
