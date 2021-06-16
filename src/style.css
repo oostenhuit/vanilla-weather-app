@@ -29,6 +29,10 @@ a {
   box-shadow: 5px 10px 10px rgba(186, 200, 221, 0.75);
   background-color: #e5effd;
 }
+
+.description::first-letter {
+  text-transform: capitalize;
+}
 .weather-temperature img {
   margin-right: 10px;
   position: relative;
