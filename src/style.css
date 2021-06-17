@@ -29,7 +29,10 @@ a {
   box-shadow: 5px 10px 10px rgba(186, 200, 221, 0.75);
   background-color: #e5effd;
 }
-
+.search-button {
+  background-color: #7ea1ff;
+  border-color: #7ea1ff;
+}
 .description::first-letter {
   text-transform: capitalize;
 }

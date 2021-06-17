@@ -1,7 +1,5 @@
 let apiKey = "a7de365924edf156fe268686a1a61738";
-let city = "Berlin";
 let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -53,4 +51,19 @@ function showTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
 }
-axios.get(apiUrl).then(showTemperature);
+
+function showCity(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityValue = document.querySelector("#city-value").value;
+  showCity(cityValue);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+showCity("Berlin");
