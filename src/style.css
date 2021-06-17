@@ -16,6 +16,7 @@ li {
 }
 a {
   color: #6f89ce;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -49,6 +50,11 @@ a {
 .weather-temperature .units {
   position: relative;
   top: -33px;
+}
+
+.weather-temperature .active {
+  cursor: default;
+  color: #080808;
 }
 .climate {
   font-size: 13px;

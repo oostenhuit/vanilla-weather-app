@@ -50,6 +50,7 @@ function showTemperature(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function showCity(city) {
@@ -62,8 +63,30 @@ function handleSubmit(event) {
   let cityValue = document.querySelector("#city-value").value;
   showCity(cityValue);
 }
+function showFahrenheit(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  let fahrenheitElement = document.querySelector("#temperature");
+  fahrenheitElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
 
+function showCelsius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusElement = document.querySelector("#temperature");
+  celsiusElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
 
 showCity("Berlin");
