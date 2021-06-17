@@ -1,10 +1,10 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #d4e2f7;
+  color: #080808;
 }
 h1 {
   font-size: 24px;
-  color: #080808;
   margin-bottom: 0;
 }
 ul {
@@ -12,7 +12,6 @@ ul {
 }
 li {
   list-style: none;
-  color: #080808;
 }
 a {
   color: #6f89ce;
@@ -24,7 +23,7 @@ a {
   margin: 30px auto;
 }
 .weather-app {
-  border: 1px solid #bac8dd;
+  border: none;
   padding: 16px;
   border-radius: 5px;
   box-shadow: 5px 10px 10px rgba(186, 200, 221, 0.75);
@@ -58,4 +57,18 @@ a {
 }
 .climate {
   font-size: 13px;
+}
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+.weather-forecast img {
+  width: 40px;
+}
+.forecast-temperatures {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.forecast-temperature-max {
+  font-weight: bold;
 }
