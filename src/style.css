@@ -32,9 +32,13 @@ a {
 .search-button {
   background-color: #7ea1ff;
   border-color: #7ea1ff;
+  text-align: center;
 }
 .description::first-letter {
   text-transform: capitalize;
+}
+.last-update {
+  font-size: 13px;
 }
 .weather-temperature img {
   margin-right: 10px;
