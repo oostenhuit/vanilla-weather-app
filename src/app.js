@@ -23,6 +23,12 @@ function formatDate(timestamp) {
   }
   return `${weekday}, ${hour}:${minutes}`;
 }
+function getForecastData(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -51,6 +57,8 @@ function showTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
   celsiusTemperature = response.data.main.temp;
+
+  getForecastData(response.data.coord);
 }
 
 function showCity(city) {
@@ -79,18 +87,8 @@ function showCelsius(event) {
   celsiusElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusTemperature = null;
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
-
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -111,8 +109,17 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
-displayForecast();
+let celsiusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+
 showCity("Berlin");
